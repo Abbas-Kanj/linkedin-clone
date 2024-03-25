@@ -1,0 +1,31 @@
+.auth-page {
+  background-color: rgb(241, 226, 255);
+}
+
+.auth-box {
+  padding: 10px;
+  width: 300px;
+}
+
+.login-form {
+  gap: 10px;
+}
+
+.login-form > button {
+  background-color: white;
+  color: blueviolet;
+  height: 40px;
+}
+
+.login-form > input {
+  height: 40px;
+  padding: 0 10px;
+}
+
+.login-form > p {
+  color: white;
+}
+
+.login-form > p > span {
+  color: blueviolet;
+}
