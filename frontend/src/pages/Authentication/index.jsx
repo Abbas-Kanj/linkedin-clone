@@ -21,11 +21,11 @@ const Authentication = () => {
     }
   }, [credentials]);
 
-  useEffect(() => {
-    axios.get("URL").then((response) => {
-      setQuizes(response.data);
-    });
-  }, []);
+  // useEffect(() => {
+  //   axios.get("URL").then((response) => {
+  //     setQuizes(response.data);
+  //   });
+  // }, []);
 
   return (
     <div className="flex center page auth-page">
@@ -47,7 +47,7 @@ const Authentication = () => {
             />
             <input
               className="full-width rounded"
-              type="text"
+              type="password"
               placeholder="Password"
               onChange={(e) => {
                 setCredentials({
@@ -63,13 +63,13 @@ const Authentication = () => {
               className="rounded bold secondary-bg full-width"
               onClick={async () => {
                 try {
-                  const { email, password } = credentials;
-
                   const response = await axios.post(
-                    "http://127.0.0.1:8000/login",
+                    "http://localhost/linkedin-clone/backend/db_apis/userApis/login.php",
+                    new URLSearchParams(credentials).toString(),
                     {
-                      email,
-                      password,
+                        headers: {
+                            "Content-Type": "application/x-www-form-urlencoded"
+                        }
                     }
                   );
 
@@ -101,21 +101,46 @@ const Authentication = () => {
               className="full-width rounded"
               type="text"
               placeholder="Email"
+              onChange={(e) => {
+                setCredentials({
+                  ...credentials,
+                  email: e.target.value,
+                });
+              }}
             />
             <input
               className="full-width rounded"
-              type="text"
+              type="password"
               placeholder="Password"
+              onChange={(e) => {
+                setCredentials({
+                  ...credentials,
+                  password: e.target.value,
+                });
+              }}
             />
-            <input
-              className="full-width rounded"
-              type="text"
-              placeholder="Confirm Password"
-            />
+
+            {error !== "" && <p>{error}</p>}
 
             <button
               className="rounded bold secondary-bg full-width"
-              onClick={() => {}}
+              onClick={async() => {
+                try{
+                  const response = await axios.post(
+                    "http://localhost/linkedin-clone/backend/db_apis/userApis/signup.php",
+                    new URLSearchParams(credentials).toString(),
+                    {
+                        headers: {
+                            "Content-Type": "application/x-www-form-urlencoded"
+                        }
+                    }
+                    );
+
+                    console.log(response.data);
+                }catch(error){
+                  console.error(error);
+                }
+              }}
             >
               Sign up
             </button>
