@@ -1,8 +1,11 @@
-import React from "react";
-import "./style.css";
+import React from 'react'
 
-const JobPosts = () => {
-  return <div>JobPosts</div>;
-};
+const profile = () => {
+  return (
+    <div>
+      profile
+    </div>
+  )
+}
 
-export default JobPosts;
+export default profile

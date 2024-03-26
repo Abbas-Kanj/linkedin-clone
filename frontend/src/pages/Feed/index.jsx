@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./style.css";
 import FeedPostC from "./components/FeedPostC";
 
 const Feed = () => {
+  const navigate = useNavigate();
   const [feedPosts, setFeedPosts] = useState([]);
   const [postProps, setPostProps] = useState({ post_title: "", post_desc: "" });
   const loadFeedPosts = async () => {
@@ -22,6 +24,17 @@ const Feed = () => {
   // console.log(feedPosts);
   return (
     <div className="flex column center home-page">
+      <div className="flex row center nav-bar">
+        <button onClick={()=>{
+          navigate("/");
+        }}>Feed Posts</button>
+        <button onClick={()=>{
+          navigate("/JobPosts");
+        }}>Job Posts</button>
+        <button onClick={()=>{
+          navigate("/Profile");
+        }}>Profile</button>
+      </div>
       <div className="flex column center rounded half-width post-form">
       <input
               className="full-width rounded"
