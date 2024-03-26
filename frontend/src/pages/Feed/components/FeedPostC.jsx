@@ -1,11 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const FeedPostCard = ({ feedPost }) => {
-
+const FeedPostC = ({ feedPost }) => {
     // const navigate = useNavigate();
     const {feed_post_id, post_title, post_desc} = feedPost
-
+    
   return (
     <div className="feedPost-card flex column center">
       <div>
@@ -18,4 +17,4 @@ const FeedPostCard = ({ feedPost }) => {
   )
 }
 
-export default FeedPostCard
+export default FeedPostC
