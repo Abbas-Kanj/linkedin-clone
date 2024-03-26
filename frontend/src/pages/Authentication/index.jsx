@@ -9,7 +9,6 @@ const Authentication = () => {
   const [isLogin, setIsLogin] = useState(false);
   const [credentials, setCredentials] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
-  const [feedPosts, setfeedPosts] = useState([]);
 
   useEffect(() => {
     if (!credentials.email.includes("@")) {
@@ -20,18 +19,6 @@ const Authentication = () => {
       setError("");
     }
   }, [credentials]);
-
-  useEffect(() => {
-    axios.get("http://localhost/linkedin-clone/backend/db_apis/feedApis/getAllFeeds.php").then((response) => {
-      setfeedPosts(response.data);
-      console.log(response.data);
-    });
-  }, []);
-  // useEffect(() => {
-  //   axios.get("URL").then((response) => {
-  //     setfeedPosts(response.data);
-  //   });
-  // }, []);
 
   return (
     <div className="flex center page auth-page">

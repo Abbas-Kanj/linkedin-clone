@@ -17,8 +17,8 @@ const App = () => {
     <div className="app">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Authentication />} />
-          <Route path="/Feed" element={<Feed />} />
+          <Route path="/auth" element={<Authentication />} />
+          <Route path="/" element={<Feed />} />
           <Route path="/JobPosts" element={<JobPosts />} />
           <Route path="/Profile" element={<Profile />} />
         </Routes>

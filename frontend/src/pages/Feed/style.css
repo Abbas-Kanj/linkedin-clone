@@ -1,0 +1,16 @@
+.home-page {
+    padding: 50px;
+    gap: 10px;
+}
+
+.feedPost-card {
+    height: 250px;
+    width: 200px;
+    padding: 10px;
+    gap: 15px;
+  }
+
+.feedPost-card > div {
+height: 40%;
+gap: 10px;
+}
