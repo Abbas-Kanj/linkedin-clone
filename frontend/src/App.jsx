@@ -4,8 +4,10 @@ import "./styles/colors.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Authentication from "./pages/Authentication";
-// import Home from "./pages/Home";
-// import Quiz from "./pages/Quiz";
+import Feed from "./pages/Feed"
+import JobPosts from "./pages/JobPosts"
+import Profile from "./pages/Profile"
+
 import { useEffect } from "react";
 
 const App = () => {
@@ -15,9 +17,10 @@ const App = () => {
     <div className="app">
       <BrowserRouter>
         <Routes>
-          {/* <Route path="/" element={<Home />} /> */}
           <Route path="/" element={<Authentication />} />
-          {/* <Route path="/quiz" element={<Quiz />} /> */}
+          <Route path="/Feed" element={<Feed />} />
+          <Route path="/JobPosts" element={<JobPosts />} />
+          <Route path="/Profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
     </div>
