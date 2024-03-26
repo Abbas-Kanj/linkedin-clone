@@ -6,9 +6,9 @@ const FeedPostC = ({ feedPost }) => {
     const {feed_post_id, post_title, post_desc} = feedPost
     
   return (
-    <div className="feedPost-card flex column center">
+    <div className="feedPost-card rounded flex column center">
       <div>
-        <h1>{post_title}</h1>
+        <h2>{post_title}</h2>
       </div>
       <div>
         <p>{post_desc}</p>
